@@ -14,8 +14,12 @@ from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 import pickle
 
-messages = pd.read_csv(r"C:\Users\vbhoj\Downloads\NLP\Spam Classfier\smsspamcollection\SMSSpamCollection",
-                 sep="\t" ,names=['label','message'])
+messages = pd.read_csv(r"C:\Users\vbhoj\Downloads\NLP\Spam Classfier\SpamCollection",
+                  sep="\t" ,names=['label','message'])
+
+# messages = pd.read_csv(r"C:\Users\vbhoj\Downloads\NLP\Spam Classfier\spam.csv")
+
+
 
 stemmer = PorterStemmer()
 lemmatizer = WordNetLemmatizer()

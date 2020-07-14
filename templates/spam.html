@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Spam Classfier Webapp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <style>
+    body {
+    background-color : rgb(5, 105, 105);
+    }
+
+    h1 {
+        color: whitesmoke ;
+        margin-left: 20px;
+    }
+    h4 {
+        color: whitesmoke;
+        margin-left: 20px;
+    }
+    p {
+        color: whitesmoke;
+        margin-top: 20px;
+    }
+    body{
+        margin-top: 70px;
+    }
+ 
+  </style>
+</head>
+<body>
+<div class="container"><br>
+  <center><h1>Spam Classfier using NLP</h1>
+    <p>Enter the required field and check for Spam/Ham</p> 
+  </center>
+</div>
+
+<br>
+
+<div class="container">  
+  <div class="row">
+     <div class="col-sm-4">
+    <!--  <h3>Column 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p> -->
+    </div> 
+        <div class="col-sm-4 text-center">
+            <form action="{{ url_for ('predict')}}" method="POST">
+            <!-- <form action='/predict' methods="post"> -->            
+                <div class="input-group">
+                  <!-- <input type="text" class="form-control" placeholder="Enter the text" name='spamclass'> -->
+                  <textarea name="spamclass" rows="4" cols="50" placeholder="Enter the text"></textarea>
+                </div><br>
+                <!-- <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter glucose count" name='glucose'>
+                </div><br>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter insulin count" name='insulin'>
+                </div><br>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter BMI count" name='BMI'>
+                </div><br>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter the Age" name='Age'>
+                </div><br> -->
+                <button class="btn btn-success" type="submit">
+                  <span class="glyphicon glyphicon-search">Check Status</span>  
+                </button>
+            </form>
+            <br>
+            <h4>{{prediction_text}}</h4>
+        </div>
+    <div class="col-sm-4">
+      <!-- 
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>-->
+    </div> 
+  </div>
+</div>
+
+</body>
+</html>

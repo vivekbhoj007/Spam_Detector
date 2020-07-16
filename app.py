@@ -10,6 +10,8 @@ from flask import Flask, render_template, request, jsonify
 import pickle
 import numpy as np
 
+from sklearn.feature_extraction.text import CountVectorizer
+
 app = Flask(__name__)
 model = pickle.load(open('Spam_Classifier.pkl','rb'))
 
@@ -25,6 +27,7 @@ def predict():
     sentence = request.form['spamclass']
     data = [sentence]
     # print(data,type(data),sentence,type(sentence))
+    cv = CountVectorizer(max_features=2500)
     vect = cv.transform(data).toarray()    
     output = spam_detect_model.predict(vect)
     # print(output,"outputttttttttttttttttt")
